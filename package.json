@@ -1,0 +1,32 @@
+{
+  "name": "feed-crawler",
+  "version": "1.0.0",
+  "description": "Parses a set of RSS Feeds and extracts the whole content of the site",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dangrie158/feed-crawler.git"
+  },
+  "author": "Daniel Grießhaber",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dangrie158/feed-crawler/issues"
+  },
+  "homepage": "https://github.com/dangrie158/feed-crawler#readme",
+  "devDependencies": {
+    "babel-plugin-transform-async-to-generator": "^6.16.0",
+    "grunt": "^1.0.1",
+    "grunt-babel": "^6.0.0",
+    "load-grunt-tasks": "^3.5.2"
+  },
+  "dependencies": {
+    "mongoose": "^4.6.8",
+    "node-feedparser": "^1.0.1",
+    "request": "^2.79.0",
+    "request-promise-native": "^1.0.3",
+    "unfluff": "^1.1.0"
+  }
+}

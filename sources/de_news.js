@@ -1,0 +1,110 @@
+/*
+  This file was derived from the RSS-Crawler Project by Saytiras. See: https://github.com/Saytiras/RSS-Crawler
+*/
+module.exports = {
+  "name": "de_news",
+  "sources": {
+    "Spiegel": [
+      "http://www.spiegel.de/schlagzeilen/index.rss"
+    ],
+    "Tagesschau": [
+      "http://www.tagesschau.de/xml/rss2"
+    ],
+    "N24": [
+      "http://feeds.n24.de/n24/homepage",
+      "http://feeds.n24.de/n24/wirtschaft_boerse",
+      "http://feeds.n24.de/n24/politik"
+    ],
+    "NTV": [
+      "http://www.n-tv.de/rss"
+    ],
+    "Zeit": [
+      "http://newsfeed.zeit.de/index",
+      "http://newsfeed.zeit.de/politik/index",
+      "http://newsfeed.zeit.de/wirtschaft/index"
+    ],
+    "Welt": [
+      "http://www.welt.de/politik/?service=Rss",
+      "http://www.welt.de/wirtschaft/?service=Rss",
+      "http://www.welt.de/wissenschaft/?service=Rss",
+      "http://www.welt.de/vermischtes/?service=Rss"
+    ],
+    "FAZ": [
+      "http://www.faz.net/rss/aktuell/"
+    ],
+    "TAZ": [
+      "http://www.taz.de/rss.xml"
+    ],
+    "Focus": [
+      "http://rss.focus.de/fol/XML/rss_folnews.xml"
+    ],
+    "Huffington Post": [
+      "http://www.huffingtonpost.de/feeds/verticals/germany/index.xml"
+    ],
+    "Deutsche Stimme": [
+      "http://deutsche-stimme.de/feed/"
+    ],
+    "Junge Freiheit": [
+      "https://jungefreiheit.de/feed/"
+    ],
+    "Junge Welt": [
+      "http://www.jungewelt.de/feeds/newsticker.rss"
+    ],
+    "Süddeutsche": [
+      "http://rss.sueddeutsche.de/rss/Wirtschaft",
+      "http://rss.sueddeutsche.de/rss/Politik",
+      "http://rss.sueddeutsche.de/rss/Leben"
+    ],
+    "Handelsblatt": [
+      "http://www.handelsblatt.com/contentexport/feed/technologie",
+      "http://www.handelsblatt.com/contentexport/feed/finanzen",
+      "http://www.handelsblatt.com/contentexport/feed/wirtschaft",
+      "http://www.handelsblatt.com/contentexport/feed/politik"
+    ],
+    "WirtschaftsWoche": [
+      "http://www.wiwo.de/contentexport/feed/rss/schlagzeilen"
+    ],
+    "Netzpolitik": [
+      "https://netzpolitik.org/feed"
+    ],
+    "Telepolis": [
+      "http://www.heise.de/tp/rss/news-atom.xml"
+    ],
+    "Golem": [
+      "http://rss.golem.de/rss.php?feed=ATOM1.0"
+    ],
+    "RT": [
+      "https://deutsch.rt.com/feeds/news/"
+    ],
+    "Stern": [
+      "http://www.stern.de/feed/standard/alle-nachrichten/"
+    ],
+    "RP Online": [
+      "http://www.rp-online.de/politik/feed.rss",
+      "http://www.rp-online.de/wirtschaft/feed.rss",
+      "http://www.rp-online.de/panorama/feed.rss"
+    ],
+    "Der Postillon": [
+      "http://feeds.feedburner.com/blogspot/rkEL"
+    ],
+    "Titanic": [
+      "http://www.titanic-magazin.de/ich.war.bei.der.waffen.rss"
+    ],
+    "Vice": [
+      "http://www.vice.com/de/rss"
+    ],
+    "Volksstimme": [
+      "http://www.volksstimme.de/section/rss&Profile=1123&UseProfile=1&Title=Deutschland",
+      "http://www.volksstimme.de/section/rss&Profile=1124&UseProfile=1&Title=Vermischtes",
+      "http://www.volksstimme.de/section/rss&Profile=1125&UseProfile=1&Title=Wirtschaft",
+      "http://www.volksstimme.de/section/rss&Profile=1126&UseProfile=1&Title=Politik",
+      "http://www.volksstimme.de/section/rss&Profile=1127&UseProfile=1&Title=Ausland"
+    ],
+    "Unsere Zeit": [
+      "http://www.unsere-zeit.de/de/0001/rss"
+    ],
+    "Cicero": [
+      "http://www.cicero.de/rss.xml"
+    ]
+  }
+}
