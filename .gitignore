@@ -1,3 +1,9 @@
+#OSX meta files
+*.DS_Store
+
+#Build files
+dist/*
+
 # Logs
 logs
 *.log
