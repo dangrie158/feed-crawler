@@ -5,7 +5,10 @@ const articleSchema = mongoose.Schema({
       type: String,
       unique: true
     },
-    source: String,
+    source: {
+      type: String,
+      unique: true
+    },
     title: String,
     site: String,
     softTitle: String,
@@ -33,7 +36,7 @@ articleSchema.statics.fromRssItem = function(rssItem){
 };
 
 articleSchema.statics.rssItemDoesNotExist = async function itemNotVisited(rssItem) {
-  let article = await this.findOne({rssTitle: rssItem.title});
+  let article = await this.findOne({ $or: [ {rssTitle: rssItem.title}, {source: rssItem.link} ] });
   if(article){
     return false;
   }
