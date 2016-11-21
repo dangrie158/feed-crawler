@@ -12,7 +12,6 @@ const out = require('./util/outputHelper');
 const de_news = require('../sources/de_news.js');
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/articles');
 
 let visitedArticles = 0;
 let savedArticles = 0;
@@ -43,6 +42,8 @@ async function saveArticle(article){
 };
 
 async function crawl(sources){
+  let db = mongoose.connect('mongodb://localhost/articles');
+
   for(const site in sources){
     out.rewrite(`crawling ${site}: \n`);
     const urls = sources[site];
@@ -59,9 +60,10 @@ async function crawl(sources){
     }
   }
 
-  out.rewrite(`Visited ${visitedArticles} Articles\n`);
   out.write(`Saved ${savedArticles} Articles\n`);
-  process.exit(0);
-}
+  out.rewrite(`Visited ${visitedArticles} Articles\n`);
+  console.log("done.");
+  db.disconnect();
+};
 
 crawl(de_news.sources);
