@@ -1,6 +1,8 @@
+const readline = require('readline');
+
 function rewrite(message){
-  process.stdout.clearLine();
-  process.stdout.cursorTo(0);
+  readline.clearLine(process.stdout, 0);
+  readline.cursorTo(process.stdout, 0, null);
   process.stdout.write(message);
 };
 

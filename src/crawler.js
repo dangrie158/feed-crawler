@@ -27,10 +27,10 @@ async function visitArticles(site, articles){
       out.rewrite(`loaded article from ${article.site}: ${article.title}... `);
       await saveArticle(article);
     }catch(e){
-      process.stdout.write(`failed to load ${article.title}`, e);
+      out.write(`failed to load ${article.title}`, e);
     }
   }
-}
+};
 
 async function saveArticle(article){
   try{
