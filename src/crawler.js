@@ -11,7 +11,11 @@ const async = require('./util/asyncHelper');
 const out = require('./util/outputHelper');
 const de_news = require('../sources/de_news.js');
 
+const ONE_HOUR = 60 * 60 * 1000;
+
 mongoose.Promise = global.Promise;
+
+let db = mongoose.connect(process.env.MONGO_URL);
 
 let visitedArticles = 0;
 let savedArticles = 0;
@@ -42,7 +46,6 @@ async function saveArticle(article){
 };
 
 async function crawl(sources){
-  let db = mongoose.connect('mongodb://localhost/articles');
 
   for(const site in sources){
     out.rewrite(`crawling ${site}: \n`);
@@ -63,7 +66,11 @@ async function crawl(sources){
   out.write(`Saved ${savedArticles} Articles\n`);
   out.rewrite(`Visited ${visitedArticles} Articles\n`);
   console.log("done.");
-  db.disconnect();
 };
 
-crawl(de_news.sources);
+async function crawlAndSchedule(){
+	await crawl(de_news.sources);
+	setTimeout(crawlAndSchedule, ONE_HOUR);
+};
+
+crawlAndSchedule();
