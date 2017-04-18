@@ -3,7 +3,7 @@ const readline = require('readline');
 function rewrite(message){
   readline.clearLine(process.stdout, 0);
   readline.cursorTo(process.stdout, 0, null);
-  process.stdout.write(message);
+  process.stdout.write(message + '\n');
 };
 
 function write(message){

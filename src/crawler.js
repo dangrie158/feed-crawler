@@ -38,7 +38,7 @@ async function visitArticles(site, articles){
 
 async function saveArticle(article){
   try{
-    await async.nfcall(article.save);
+    await article.save();
     savedArticles += 1;
   }catch(e){
     process.stdout.write(`skipped`);
