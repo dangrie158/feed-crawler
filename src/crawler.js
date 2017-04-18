@@ -15,7 +15,8 @@ const ONE_HOUR = 60 * 60 * 1000;
 
 mongoose.Promise = global.Promise;
 
-let db = mongoose.connect(process.env.MONGO_URL);
+let dbConnStr = process.env.MONGO_URL || 'localhost/articles';
+let db = mongoose.connect(dbConnStr);
 
 let visitedArticles = 0;
 let savedArticles = 0;
