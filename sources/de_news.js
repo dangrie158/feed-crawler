@@ -71,7 +71,7 @@ module.exports = {
       "http://www.heise.de/tp/rss/news-atom.xml"
     ],
     "Golem": [
-      "http://rss.golem.de/rss.php?feed=ATOM1.0"
+      "https://rss.golem.de/rss.php?feed=ATOM1.0"
     ],
     "RT": [
       "https://deutsch.rt.com/feeds/news/"
