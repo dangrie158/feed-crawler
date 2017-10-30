@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/dangrie158/feed-crawler#readme",
   "devDependencies": {
-    "babel-plugin-transform-async-to-generator": "^6.16.0",
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
     "grunt": "^1.0.1",
     "grunt-babel": "^6.0.0",
     "load-grunt-tasks": "^3.5.2"
@@ -25,8 +25,8 @@
   "dependencies": {
     "mongoose": "^4.6.8",
     "node-feedparser": "^1.0.1",
-    "request": "^2.79.0",
-    "request-promise-native": "^1.0.3",
+    "request": "^2.83.0",
+    "request-promise-native": "^1.0.5",
     "unfluff": "^1.1.0"
   }
 }

@@ -1,0 +1,41 @@
+{
+  "name": "us_news",
+  "lang": "de",
+  "sources": {
+    "Breitbart": [
+      "http://feeds.feedburner.com/breitbart"
+    ],
+    "CNN": [
+      "http://rss.cnn.com/rss/edition.rss"
+    ],
+    "Fox News": [
+      "http://feeds.foxnews.com/foxnews/latest"
+    ],
+    "USA Today": [
+      "http://rssfeeds.usatoday.com/usatoday-NewsTopStories"
+    ],
+    "ABC News": [
+      "http://feeds.abcnews.com/abcnews/topstories"
+    ],
+    "The Wall Street Journal": [
+      "http://www.wsj.com/xml/rss/3_7041.xml",
+      "http://www.wsj.com/xml/rss/3_7085.xml",
+      "http://www.wsj.com/xml/rss/3_7014.xml"
+    ],
+    "Reuters": [
+      "http://feeds.reuters.com/reuters/topNews"
+    ],
+    "New York Times": [
+      "http://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml"
+    ],
+    "Time": [
+      "http://feeds2.feedburner.com/time/topstories"
+    ],
+    "CBS News": [
+      "http://www.cbsnews.com/latest/rss/main"
+    ],
+    "MSNBC": [
+      "http://www.msnbc.com/feeds/latest"
+    ]
+  }
+}

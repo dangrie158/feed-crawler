@@ -9,7 +9,8 @@ const _ = require('lodash');
 const Article = require('./article')
 const async = require('./util/asyncHelper');
 const out = require('./util/outputHelper');
-const de_news = require('../sources/de_news.js');
+const de_news = require('../sources/de_news');
+const en_news = require('../sources/en_news');
 
 const ONE_HOUR = 60 * 60 * 1000;
 
@@ -21,7 +22,7 @@ let db = mongoose.connect(dbConnStr);
 let visitedArticles = 0;
 let savedArticles = 0;
 
-async function visitArticles(site, articles){
+async function visitArticles(site, articles, language){
   for(let article of articles){
     visitedArticles += 1;
     try{
@@ -29,6 +30,7 @@ async function visitArticles(site, articles){
       let cleanData = unfluff(content);
       article = _.extend(article, cleanData);
       article.site = site;
+      article.lang = language;
       out.rewrite(`loaded article from ${article.site}: ${article.title}... `);
       await saveArticle(article);
     }catch(e){
@@ -46,7 +48,7 @@ async function saveArticle(article){
   }
 };
 
-async function crawl(sources){
+async function crawl(sources, language){
 
   for(const site in sources){
     out.rewrite(`crawling ${site}: \n`);
@@ -60,7 +62,7 @@ async function crawl(sources){
       let articles = unvisitedItems.map(Article.fromRssItem.bind(Article));
 
       out.rewrite(`\tfound ${articles.length} Articles from ${url}\n`);
-      await visitArticles(site, articles);
+      await visitArticles(site, articles, language);
     }
   }
 
@@ -70,7 +72,8 @@ async function crawl(sources){
 };
 
 async function crawlAndSchedule(){
-	await crawl(de_news.sources);
+	await crawl(de_news.sources, de_news.lang);
+  await crawl(en_news.sources, en_news.lang);
 	setTimeout(crawlAndSchedule, ONE_HOUR);
 };
 

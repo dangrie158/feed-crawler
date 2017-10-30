@@ -1,8 +1,6 @@
-/*
-  This file was derived from the RSS-Crawler Project by Saytiras. See: https://github.com/Saytiras/RSS-Crawler
-*/
-module.exports = {
+{
   "name": "de_news",
+  "lang:": "en",
   "sources": {
     "Spiegel": [
       "http://www.spiegel.de/schlagzeilen/index.rss"
