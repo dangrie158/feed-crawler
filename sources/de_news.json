@@ -1,6 +1,6 @@
 {
   "name": "de_news",
-  "lang:": "en",
+  "lang": "de",
   "sources": {
     "Spiegel": [
       "http://www.spiegel.de/schlagzeilen/index.rss"

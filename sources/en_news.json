@@ -1,6 +1,6 @@
 {
   "name": "us_news",
-  "lang": "de",
+  "lang": "en",
   "sources": {
     "Breitbart": [
       "http://feeds.feedburner.com/breitbart"
