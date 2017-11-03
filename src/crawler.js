@@ -55,14 +55,18 @@ async function crawl(sources, language){
     const urls = sources[site];
 
     for(const url of urls){
-      let feedXml = await request(url);
-      let feed = await async.nfcall(feedparser, feedXml);
-      let unvisitedItems = await async.filter(feed.items, Article.rssItemDoesNotExist.bind(Article));
+      try{
+        let feedXml = await request(url);
+        let feed = await async.nfcall(feedparser, feedXml);
+        let unvisitedItems = await async.filter(feed.items, Article.rssItemDoesNotExist.bind(Article));
 
-      let articles = unvisitedItems.map(Article.fromRssItem.bind(Article));
+        let articles = unvisitedItems.map(Article.fromRssItem.bind(Article));
 
-      out.rewrite(`\tfound ${articles.length} Articles from ${url}\n`);
-      await visitArticles(site, articles, language);
+        out.rewrite(`\tfound ${articles.length} Articles from ${url}\n`);
+        await visitArticles(site, articles, language);
+      }catch(e){
+        console.log(`failed to crawl RSS feed ${site}`)
+      }
     }
   }
 
